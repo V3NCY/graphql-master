@@ -26,7 +26,7 @@ mongoose.connect(db, {
   useCreateIndex: true,
   useUnifiedTopology: true
 }).then(() => {
-  console.log('Successfully connected to MONGODB!')
+  console.log('Successfully connected to MONGODB!!!')
 }).catch((e) => {
   console.log(e);
 })

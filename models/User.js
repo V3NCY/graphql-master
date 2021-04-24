@@ -1,32 +1,32 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const UserSchema = new Schema ({
-    email:  {
+const userSchema = new Schema({
+    email: {
         unique: true,
         type: String,
     },
-    password:  { 
-        type: String, 
-        min: 4, 
-        max: 50 
+    password: {
+        type: String,
+        min: 4,
+        max: 50
     },
-    games: [{
+    hotels: [{
         type: Schema.Types.ObjectId,
-        ref: 'Hotel' 
+        ref: 'Hotel'
     }],
-    firstName: { 
-        type: String, 
-        min: 4, 
-        max: 100, 
+    firstName: {
+        type: String,
+        min: 4,
+        max: 100,
     },
-    lastName: { 
-        type: String, 
-        min: 4, 
-        max: 100, 
+    lastName: {
+        type: String,
+        min: 4,
+        max: 100,
     },
     roles: [],
 })
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", userSchema);
 export default User;

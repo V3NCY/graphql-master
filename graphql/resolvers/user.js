@@ -23,25 +23,25 @@ export default {
     },
     Mutation: {
         createUser: async (root, args) => {
-            const userInput = args.input;
-            if (!validator.isEmail(userInput.email)) {
-                throw new UserInputError(`This email: ${userInput.email} is not valid, please try again...`, {
+            const userData = args.input;
+            if (!validator.isEmail(userData.email)) {
+                throw new UserInputError(`This email: ${userData.email} is not valid, please try again...`, {
                     field: "email",
-                    value: userInput.email,
+                    value: userData.email,
                     constraint: "isEmail",
                 })
             }
 
-            if (!validator.isLength(userInput.password, { min: 4, max: 50 })) {
+            if (!validator.isLength(userData.password, { min: 4, max: 50 })) {
                 throw new UserInputError(`Password has to be between 4 and 50 symbols`, {
                     field: "password",
-                    value: userInput.password,
+                    value: userData.password,
                     constraint: "isLength",
                 })
             }
 
-            userInput.password = await bcryptjs.hash(userInput.password, 10);
-            const newUser = new User(userInput);
+            userData.password = await bcryptjs.hash(userData.password, 10);
+            const newUser = new User(userData);
             await newUser.save();
             return newUser;
         },

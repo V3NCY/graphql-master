@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const hotelSchema = new Schema ({
-    title:  String,
+const hotelSchema = new Schema({
+    title: String,
     description: String,
     extras: String,
     image: String,

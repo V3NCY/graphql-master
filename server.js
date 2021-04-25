@@ -14,7 +14,7 @@ const db = process.env.MONGODB_URL;
 
 const auth = jwt({
   secret: process.env.JSONWEBTOKEN_PRIVATE_KEY,
-  algorithms: ["HS256"],
+  algorithms: ['HS256'],
   credentialsRequired: false,
 });
 

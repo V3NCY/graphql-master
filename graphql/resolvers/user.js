@@ -82,7 +82,7 @@ export default {
                 _id: matchedUser._id,
                 email: matchedUser.email,
             }, privateKey, {
-                expiresIn: "24h"
+                expiresIn: "1d"
             });
 
             return token;

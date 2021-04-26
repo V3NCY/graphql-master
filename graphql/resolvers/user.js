@@ -23,25 +23,25 @@ export default {
     },
     Mutation: {
         createUser: async (root, args) => {
-            const userData = args.input;
-            if (!validator.isEmail(userData.email)) {
-                throw new UserInputError(`This email: ${userData.email} is not valid, please try again...`, {
+            const userInput = args.input;
+            if (!validator.isEmail(userInput.email)) {
+                throw new UserInputError(`The email: ${userInput.email} is not valid, please try again...`, {
                     field: "email",
-                    value: userData.email,
+                    value: userInput.email,
                     constraint: "isEmail",
                 })
             }
 
-            if (!validator.isLength(userData.password, { min: 4, max: 50 })) {
+            if (!validator.isLength(userInput.password, { min: 4, max: 50 })) {
                 throw new UserInputError(`Password has to be between 4 and 50 symbols`, {
                     field: "password",
-                    value: userData.password,
+                    value: userInput.password,
                     constraint: "isLength",
                 })
             }
 
-            userData.password = await bcryptjs.hash(userData.password, 10);
-            const newUser = new User(userData);
+            userInput.password = await bcryptjs.hash(userInput.password, 10);
+            const newUser = new User(userInput);
             await newUser.save();
             return newUser;
         },
@@ -61,7 +61,7 @@ export default {
         login: async (root, { email, password }) => {
             const matchedUser = await User.findOne({ email });
             if (!matchedUser) {
-                throw new UserInputError(`No users with this e-mail: ${email} found...`, {
+                throw new UserInputError(`No users found with this e-mail: ${email}...`, {
                     field: "email",
                     value: email,
                     constraint: "emailDoesNotExist",
@@ -77,11 +77,11 @@ export default {
                 })
             }
 
-            const privateKey = process.env.JSONWEBTOKEN_PRIVATE_KEY;
+            const pk = process.env.JSONWEBTOKEN_PRIVATE_KEY;
             const token = jwt.sign({
                 _id: matchedUser._id,
                 email: matchedUser.email,
-            }, privateKey, {
+            }, pk, {
                 expiresIn: "1d"
             });
 

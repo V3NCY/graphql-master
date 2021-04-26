@@ -8,6 +8,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import jwt from "express-jwt";
 import mongoose from "mongoose";
+
 dotenv.config();
 
 const db = process.env.MONGODB_URL;
@@ -53,6 +54,8 @@ async function startApolloServer() {
     bodyParser.json(),
     auth
   );
+
+
 
   server.applyMiddleware({ app, path: graphqlPath });
   await new Promise(resolve => app.listen({ port: process.env.PORT }, resolve));

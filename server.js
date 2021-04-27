@@ -11,6 +11,8 @@ import mongoose from "mongoose";
 
 dotenv.config();
 
+
+
 const db = process.env.MONGODB_URL;
 
 const auth = jwt({
@@ -19,7 +21,7 @@ const auth = jwt({
   credentialsRequired: false,
 });
 
-const graphqlPath = "/graphql";
+
 
 mongoose.connect(db, {
   useNewUrlParser: true,
@@ -45,6 +47,8 @@ async function startApolloServer() {
   });
 
   const app = express();
+  const graphqlPath = "/graphql";
+
   app.use(
     graphqlPath,
     cors({

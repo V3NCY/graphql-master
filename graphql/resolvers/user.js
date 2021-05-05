@@ -39,12 +39,12 @@ export default {
                     constraint: "isLength",
                 })
             }
-                if (!validator.isLength(userInput.confirmPassword, { min: 4, max: 50 })) {
-                    throw new UserInputError(`Password has to be between 4 and 50 symbols`, {
-                        field: "confirmPassword",
-                        value: userInput.confirmPassword,
-                        constraint: "isLength",
-                    })
+            if (!validator.isLength(userInput.confirmPassword, { min: 4, max: 50 })) {
+                throw new UserInputError(`Password has to be between 4 and 50 symbols`, {
+                    field: "confirmPassword",
+                    value: userInput.confirmPassword,
+                    constraint: "isLength",
+                })
             }
 
             userInput.password = await bcryptjs.hash(userInput.password, 10);
@@ -65,7 +65,15 @@ export default {
             const user = User.findOneAndDelete(_id).populate("hotels");
             return user;
         },
-        login: async (root, { email, password }) => {
+        login: async (root, { username, email, password }) => {
+            const validUser = await User.findOne({ username });
+            if (!validUser) {
+                throw new UserInputError(`The user: ${username} is not found...`, {
+                    field: "username",
+                    value: username,
+                    constraint: "usernameDoesNotExist",
+                })
+            }
             const matchedUser = await User.findOne({ email });
             if (!matchedUser) {
                 throw new UserInputError(`No users found with this e-mail: ${email}...`, {

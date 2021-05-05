@@ -20,8 +20,8 @@ export default `
         confirmPassword: String!
         firstName: String!
         lastName: String!
-        hotels: [String]
-        events: [String]
+        hotels: [Hotel]
+        events: [Event]
         roles: [String]
     }
 

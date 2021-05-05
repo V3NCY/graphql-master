@@ -1,8 +1,10 @@
 export default `
 
     input UserInput {
+        username: String!
         email: String!
         password: String!
+        confirmPassword: String!
         hotels: [String]
         firstName: String!
         lastName: String!
@@ -11,8 +13,10 @@ export default `
 
     type User {
         _id: String!
+        username: String!
         email: String!
         password: String!
+        confirmPassword: String!
         firstName: String!
         lastName: String!
         hotels: [Hotel]
@@ -26,11 +30,12 @@ export default `
     }
     
     type Mutation {
-        createUser (input: UserInput!): User
+        registerUser (input: UserInput!): User
         editUser (_id: String!, input: UserInput!): User 
         deleteUser (_id: String!): User
         login(email: String!, password: String!): String
         logout: User
+        
     }
 
 `

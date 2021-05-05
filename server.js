@@ -9,9 +9,8 @@ import cors from "cors";
 import jwt from "express-jwt";
 import mongoose from "mongoose";
 
+
 dotenv.config();
-
-
 
 const db = process.env.MONGODB_URL;
 

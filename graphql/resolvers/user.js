@@ -22,7 +22,7 @@ export default {
         },
     },
     Mutation: {
-        createUser: async (root, args) => {
+        registerUser: async (root, args) => {
             const userInput = args.input;
             if (!validator.isEmail(userInput.email)) {
                 throw new UserInputError(`The email: ${userInput.email} is not valid, please try again...`, {
@@ -38,6 +38,13 @@ export default {
                     value: userInput.password,
                     constraint: "isLength",
                 })
+            }
+                if (!validator.isLength(userInput.confirmPassword, { min: 4, max: 50 })) {
+                    throw new UserInputError(`Password has to be between 4 and 50 symbols`, {
+                        field: "confirmPassword",
+                        value: userInput.confirmPassword,
+                        constraint: "isLength",
+                    })
             }
 
             userInput.password = await bcryptjs.hash(userInput.password, 10);
@@ -90,7 +97,7 @@ export default {
         logout: async (root, args, context) => {
             return context.user;
         }
-    }
 
+    }
 
 }

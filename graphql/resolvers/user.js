@@ -48,6 +48,7 @@ export default {
             }
 
             userInput.password = await bcryptjs.hash(userInput.password, 10);
+            userInput.confirmPassword = await bcryptjs.hash(userInput.confirmPassword, 10);
             const newUser = new User(userInput);
             await newUser.save();
             return newUser;

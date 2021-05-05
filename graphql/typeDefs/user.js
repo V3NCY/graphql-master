@@ -1,7 +1,6 @@
 export default `
 
     input UserInput {
-        username: String!
         email: String!
         password: String!
         confirmPassword: String!
@@ -14,7 +13,6 @@ export default `
 
     type User {
         _id: String!
-        username: String!
         email: String!
         password: String!
         confirmPassword: String!

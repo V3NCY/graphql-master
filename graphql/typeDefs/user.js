@@ -5,11 +5,11 @@ export default `
         email: String!
         password: String!
         confirmPassword: String!
-        hotels: [String]
         firstName: String!
         lastName: String!
+        hotels: [String]
+        events: [String]
         roles: [String]
-        events: [Event]
     }
 
     type User {

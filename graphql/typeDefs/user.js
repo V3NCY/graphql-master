@@ -21,7 +21,7 @@ export default `
         firstName: String!
         lastName: String!
         hotels: [Hotel]
-        events: [String]
+        events: [Event]
         roles: [String]
     }
 

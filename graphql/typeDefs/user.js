@@ -9,6 +9,7 @@ export default `
         firstName: String!
         lastName: String!
         roles: [String]
+        events: [Event]
     }
 
     type User {
@@ -20,6 +21,7 @@ export default `
         firstName: String!
         lastName: String!
         hotels: [Hotel]
+        events: [Event]
         roles: [String]
     }
 

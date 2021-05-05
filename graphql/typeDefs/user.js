@@ -35,7 +35,7 @@ export default `
         registerUser (input: UserInput!): User
         editUser (_id: String!, input: UserInput!): User 
         deleteUser (_id: String!): User
-        login(username: String!, email: String!, password: String!): String
+        login( email: String!, password: String!): String
         logout: User
         
     }

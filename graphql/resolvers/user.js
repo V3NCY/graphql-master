@@ -65,15 +65,8 @@ export default {
             const user = User.findOneAndDelete(_id).populate("hotels");
             return user;
         },
-        login: async (root, { username, email, password }) => {
-            const validUser = await User.findOne({ username });
-            if (!validUser) {
-                throw new UserInputError(`The user: ${username} is not found...`, {
-                    field: "username",
-                    value: username,
-                    constraint: "usernameDoesNotExist",
-                })
-            }
+        login: async (root, {  email, password }) => {
+            
             const matchedUser = await User.findOne({ email });
             if (!matchedUser) {
                 throw new UserInputError(`No users found with this e-mail: ${email}...`, {

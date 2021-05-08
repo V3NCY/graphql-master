@@ -6,6 +6,20 @@ import dotenv from "dotenv";
 import { UserInputError } from "apollo-server";
 dotenv.config();
 
+
+function getToken(_id, email) {
+    const pk = process.env.JSONWEBTOKEN_PRIVATE_KEY;
+    const token = jwt.sign({
+        _id,
+        email,
+    }, pk, {
+        expiresIn: "1d"
+    });
+
+    return token;
+}
+
+
 export default {
     Query: {
         user: async (root, { _id }) => {
@@ -51,7 +65,7 @@ export default {
             userInput.confirmPassword = await bcryptjs.hash(userInput.confirmPassword, 10);
             const newUser = new User(userInput);
             await newUser.save();
-            return newUser;
+            return getToken(newUser._id, newUser.email);
         },
         editUser: async (root, { _id, input }) => {
             const user = await User.findByIdAndUpdate(_id,
@@ -66,8 +80,8 @@ export default {
             const user = User.findOneAndDelete(_id).populate("hotels");
             return user;
         },
-        login: async (root, {  email, password }) => {
-            
+        login: async (root, { email, password }) => {
+
             const matchedUser = await User.findOne({ email });
             if (!matchedUser) {
                 throw new UserInputError(`No users found with this e-mail: ${email}...`, {
@@ -86,15 +100,7 @@ export default {
                 })
             }
 
-            const pk = process.env.JSONWEBTOKEN_PRIVATE_KEY;
-            const token = jwt.sign({
-                _id: matchedUser._id,
-                email: matchedUser.email,
-            }, pk, {
-                expiresIn: "1d"
-            });
-
-            return token;
+            return getToken(matchedUser._id, matchedUser.email);
         },
         logout: async (root, args, context) => {
             return context.user;

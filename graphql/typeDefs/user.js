@@ -30,7 +30,7 @@ export default `
     }
     
     type Mutation {
-        registerUser (input: UserInput!): User
+        registerUser (input: UserInput!): String
         editUser (_id: String!, input: UserInput!): User 
         deleteUser (_id: String!): User
         login( email: String!, password: String!): String

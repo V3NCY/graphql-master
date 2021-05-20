@@ -1,4 +1,9 @@
+import GraphQLJSON, { GraphQLJSONObject } from 'graphql-type-json';
+
 export default `
+
+    scalar JSON
+    scalar JSONObject
 
     type Hotel {
         _id: String!
@@ -20,6 +25,7 @@ export default `
     type Query {
         hotel (_id: String!): Hotel
         hotels: [Hotel]
+        hardcodedHotels: JSONObject
     }
     
     type Mutation {

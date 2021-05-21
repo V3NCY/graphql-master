@@ -1,5 +1,5 @@
-import Hotel from "../../models/Hotel.js";
-import hardcodedHotels from './hardcodedhotels.js'
+import Restaurant from "../../models/Restaurant.js";
+import hardcodedRestaurants from './hardcodedrestaurants.js'
 export default {
     Query: {
         restaurant: async (root, { _id }) => {

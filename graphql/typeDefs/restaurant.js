@@ -5,7 +5,7 @@ export default `
     scalar JSON
     scalar JSONObject
 
-    type Hotel {
+    type Restaurant {
         _id: String!
         title: String!
         description: String!
@@ -14,7 +14,7 @@ export default `
         image: String!
     }
 
-    input CreateHotelInput {
+    input CreateRestaurantInput {
         title: String!
         description: String!
         extras: String!
@@ -23,16 +23,15 @@ export default `
     }
 
     type Query {
-        hotel (_id: String!): Hotel
-        hotels: [Hotel]
-        hardcodedHotels: JSONObject
+        restaurant (_id: String!): Restaurant
+        restaurants: [Restaurant]
         hardcodedRestaurants: JSONObject
     }
     
     type Mutation {
-        createHotel (input: CreateHotelInput!): Hotel
-        editHotel (_id: String!, input: CreateHotelInput!): Hotel
-        deleteHotel (_id: String!): Hotel
+        createRestaurant (input: CreateRestaurantInput!): Restaurant
+        editRestaurant (_id: String!, input: CreateRestaurantInput!): Restaurant
+        deleteRestaurant (_id: String!): Restaurant
     }
 
 `

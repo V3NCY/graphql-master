@@ -10,9 +10,7 @@ export default {
             const restaurants = await Restaurant.find({});
             return restaurants;
         },
-        hardcodedRestaurants: () => {
-            return hardcodedRestaurants
-        },
+
         hardcodedRestaurants: () => {
             return hardcodedRestaurants
         },

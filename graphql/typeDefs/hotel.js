@@ -26,7 +26,6 @@ export default `
         hotel (_id: String!): Hotel
         hotels: [Hotel]
         hardcodedHotels: JSONObject
-        hardcodedRestaurants: JSONObject
     }
     
     type Mutation {

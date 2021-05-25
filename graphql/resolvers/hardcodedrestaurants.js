@@ -5,7 +5,7 @@ export default {
       "name": "Ресторант Дядо Либен",
       "stars": 4,
       "images": [
-        "https://lh3.googleusercontent.com/proxy/KWN4rEnWlKRhGC4TiFR2in5F6583ovO_b67F9aNlp_wtvmwPmTaA6Z3xQa_JeYlCFvCJMJ8ze9R1BexGtpCPthPHh7Ionb5wftpQRylUpeYkKFLMjawY3Fghp75FyQ",
+        "https://businessportal.bg/wp-content/uploads/2016/04/img_8179_12733620-2.jpg",
         "https://businessportal.bg/wp-content/uploads/2016/04/img_8179_12733620-2.jpg",
         "https://comunicatorbg.com/dqdo_luben/mehana.jpg"
       ],

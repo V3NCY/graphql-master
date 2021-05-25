@@ -6,7 +6,7 @@ export default {
       "stars": 4,
       "images": [
         "https://businessportal.bg/wp-content/uploads/2016/04/img_8179_12733620-2.jpg",
-        "https://businessportal.bg/wp-content/uploads/2016/04/img_8179_12733620-2.jpg",
+        "https://lh3.googleusercontent.com/proxy/ZyzbEqJO9KVVFr1VUL1LRu_LIzVGAA5hZ7XuLZ5KWA9ZcZ3mL7rrlNXGevZxmlK_AHFoC6SiBmixHjaoin_y-Pos43qEfBnbGIYTyL5unnva",
         "https://comunicatorbg.com/dqdo_luben/mehana.jpg"
       ],
       "description": "Ресторант Дядо Либен разполага с богато меню с традиционни ястия.",
@@ -30,7 +30,7 @@ export default {
       "stars": 3,
       "images": [
         "http://restaurantbulgaria.weebly.com/uploads/4/2/2/7/42270081/5018427_orig.jpg",
-        "https://lh3.googleusercontent.com/proxy/WtrtoMiMf6_WMYIS4iXtEmrbzTOAS4gBRXltcltesWANkDTjnTcDT3s5hsl5yOQk-7SN_WCAKtaFey4mqxCkqPRD6MHXK2hV9g",
+        "https://imgrabo.com/pics/guide/900x600/20201216161023_37541.jpeg",
         "https://d3u845fx6txnqz.cloudfront.net/news/i327-Where-is-the-most-delicious-pizza-in-Gabrovo-.jpg"
       ],
       "description": "Пици по ВАШ вкус.",
@@ -43,7 +43,7 @@ export default {
       "images": [
         "http://b2bridges.eu/images/restaurants/4//Pod%20starata%20krusha.jpg",
         "https://imgrabo.com/pics/guide/900x600/20201215172958_98290.jpeg",
-        "https://lh3.googleusercontent.com/proxy/OicXXo4cquz0nBYH_rJzbzgswsZbDQKTUNwxZoyYfVYth5frC0_ggQms2Q9wPPxYkbJC7YU40xIRFet_L0x23E8jsc6gOimXhrs"
+        "https://untappd.akamaized.net/photos/2019_03_18/6d4f6c4a668acc40e82f290687da24ce_640x640.jpg"
       ],
       "description": "Традиционно приготвено пиво с богато меню.",
       "city": "Копривщица"
@@ -54,7 +54,7 @@ export default {
       "stars": 3,
       "images": [
         "https://cf.bstatic.com/images/hotel/max1280x900/757/75733105.jpg",
-        "https://lh3.googleusercontent.com/proxy/oJ8vV5nvwTu1saA9nb8qDVZzHApALvzvw10Xknio6lG2fPRuk4eMGrOrEI6_c-8zFOsHKIvNm84LJY3HZunaaaihsqqKKvkhLU_QFPEl7BVcPe95ltFpfNmkAISW7iOnuoSgxu-owl9e04E",
+        "https://cf.bstatic.com/images/hotel/max1280x900/757/75733686.jpg",
         "https://cf.bstatic.com/images/hotel/max1024x768/143/143838446.jpg"
       ],
       "description": "На най-удобното място - центъра с богато меню и незабравими вкусове.",
@@ -78,7 +78,7 @@ export default {
       "stars": 2,
       "images": [
         "https://comunicatorbg.com/baigencho/baigencho-1472227586-05.jpg",
-        "https://scontent.fymy1-2.fna.fbcdn.net/v/t31.18172-0/p180x540/13731941_1248742258477209_141051277514941196_o.jpg?_nc_cat=111&ccb=1-3&_nc_sid=2d5d41&_nc_ohc=_LzLaYGyrysAX_mDuvi&_nc_ht=scontent.fymy1-2.fna&tp=6&oh=d1c46858fe833853771eb627282ba531&oe=60AC2F71",
+        "https://comunicatorbg.com/baigencho/baigencho-1472227586-slider02.jpg",
         "https://lh3.googleusercontent.com/p/AF1QipMzvxiM5ETU_Tm3EqblGTMwqF9wWl_MxJ1MveQH=w600-k"
       ],
       "description": "На изхода на Копривщица.",
